@@ -202,6 +202,6 @@ finished!
 
 Rust的生命周期是个很有意思的概念，从认识到理解确实有个过程。
 
-[源码地址]()
+[源码地址](https://github.com/jiashiwen/wenpanrust/blob/main/examples/static_deadlock.rs)
 
 感谢社区小姐姐@YY社区小帮手的图片支持。
