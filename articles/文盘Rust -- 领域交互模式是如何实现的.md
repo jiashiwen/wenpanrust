@@ -1,8 +1,9 @@
 # 文盘Rust -- 领域交互模式如何实现
 
-书接上文，上回说到如何通过[interactcli-rs](https://github.com/jiashiwen/interactcli-rs)四步实现一个命令行程序。但是shell交互模式在有些场景下用户体验并不是很好。比如我们要连接某个服务，比如mysql或者redis这样的服务。如果每次交互都需要输入地址、端口、用户名等信息，加护起来太麻烦。通常的做法是一次性输入和连接相关的信息或者由统一配置文件进行管理，然后进入领域交互模式，所有的命令和反馈都和该领域相关。[interactcli-rs](https://github.com/jiashiwen/interactcli-rs) 通过 -i 参数实现领域交互模式。这回我们探索一下这一模式是如何实现的。
+书接上文，上回说到如何通过[interactcli-rs](https://github.com/jiashiwen/interactcli-rs)四步实现一个命令行程序。但是shell交互模式在有些场景下用户体验并不是很好。比如我们要连接某个服务，比如mysql或者redis这样的服务。如果每次交互都需要输入地址、端口、用户名等信息，交互起来太麻烦。通常的做法是一次性输入和连接相关的信息或者由统一配置文件进行管理，然后进入领域交互模式，所有的命令和反馈都和该领域相关。[interactcli-rs](https://github.com/jiashiwen/interactcli-rs) 通过 -i 参数实现领域交互模式。这回我们探索一下这一模式是如何实现的。
 
 ## 基本原理
+
 interactcli-rs 实现领域交互模式主要是循环解析输入的每一行，通过[rustyline](https://github.com/kkawakam/rustyline) 解析输入的每一行命令，并交由命令解析函数处理响应逻辑
 
 当我们调用 ‘-i’ 参数的时候 实际上是执行了 interact::run() 函数(interact -> cli -> run())。
@@ -75,7 +76,7 @@ pub fn run() {
 }
 ```
 
-## 命令行解析主逻辑
+## 解析主逻辑
 
 交互逻辑主要集中在 ‘loop’ 循环中，每次循环处理一次输入请求。
 
@@ -142,6 +143,7 @@ pub fn run() {
     .output_stream(OutputStreamType::Stdout)
     .build();
   ```
+
   这个config 其实是rustyline的配置项，包括输出方式历史记录约束，输出方式等等。
 
   MyHelper 用于配置命令的 autocomplete
@@ -155,6 +157,7 @@ pub fn run() {
     validator: MatchingBracketValidator::new(),
   }; 
   ```
+
   这里卖个关子，下期详细讲讲 autocomplete 的实现。
 
 * 配置历史文件
