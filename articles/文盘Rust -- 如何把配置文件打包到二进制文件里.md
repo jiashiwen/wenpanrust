@@ -1,7 +1,7 @@
 # 文盘Rust -- 如何把配置文件打包到二进制文件里
 
 在实际开发中，经常会遇到各种不同的配置文件。通常，程序运行的各种配置从外部读取，以增强应用配置的灵活性。java 生态中的 springboot 提供了这种设计的典范。springboot 的应用程序，默认通过 application.yml 加载配置。默认的 application.yml 文件打进 jar 包，如果想改变程序的行为，可以在jar 包的同级目录下创建 application.yml 文件或者通过参数指定配置文件位置。那么在 rust 生态里有没有办法把默认配置文件打包到二进制文件呢。
-我们可以通过(rust-embed)[https://github.com/pyrossh/rust-embed] 第三方库来实现这一效果。
+我们可以通过 [rust-embed](https://github.com/pyrossh/rust-embed) 第三方库来实现这一效果。
 在实际开发中的典型场景是: 不指定任何配置文件时，使用默认配置文件；当应用程序同级目录下包含配置文件时加载该配置文件。
 
 * 定义嵌入文件的位置及获取函数
@@ -48,3 +48,6 @@
   ```
 
   先执行 embed ，可以看到，输出的是默认配置文件的内容；在应用程序同级目录建立 app.yml 文件，随便填写些内容，再执行 embed 则输出的是 app.yml 文件的内容。
+
+[源码地址](https://github.com/jiashiwen/wenpanrust/tree/main/embed)
+以上示例在 macos 上编译执行通过，咱们下期见
