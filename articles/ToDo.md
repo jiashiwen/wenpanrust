@@ -7,6 +7,7 @@
 - [x] 给程序加个日志
 - [x] 配置文件解析
 - [ ] 如何把配置文件打包到二进制文件里
-- [ ] struct 中的生命周期
+- [ ] struct 中的生命周期(多个trait object)
+- [ ] 通过rayon实现任务控制
 - [ ] etcd 分页
 - [ ] etcd cursor
