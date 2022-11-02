@@ -18,6 +18,6 @@ notice"Rust is a trademark of the Mozilla Foundation in the US and other countri
   
 * [文盘Rust -- 如何把配置文件打包到二进制文件里](https://github.com/jiashiwen/wenpanrust/blob/main/articles/%E6%96%87%E7%9B%98Rust%20--%20%E5%A6%82%E4%BD%95%E6%8A%8A%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E5%88%B0%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E9%87%8C.md)
   
-* [文盘Rust -- 给程序加个日志]()
+* [文盘Rust -- 给程序加个日志](https://github.com/jiashiwen/wenpanrust/blob/main/articles/%E6%96%87%E7%9B%98Rust%20--%20%E7%BB%99%E7%A8%8B%E5%BA%8F%E5%8A%A0%E4%B8%AA%E6%97%A5%E5%BF%97.md)
   
-* [文盘Rust --  把程序作为守护进程启动]()
+* [文盘Rust --  把程序作为守护进程启动](https://github.com/jiashiwen/wenpanrust/blob/main/articles/%E6%96%87%E7%9B%98Rust%20--%20%E6%8A%8A%E7%A8%8B%E5%BA%8F%E4%BD%9C%E4%B8%BA%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%90%AF%E5%8A%A8.md)
