@@ -13,3 +13,7 @@ rust-embed = "6.4.0"
 [[example]]
 name = "deadlock"
 path = "examples/static_deadlock.rs"
+
+[[example]]
+name="structlifetime"
+path="examples/lifetimeinstruct.rs"

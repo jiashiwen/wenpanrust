@@ -45,3 +45,4 @@ Cargo.lock
 **/target
 **/*.rs.bk
 **/pid
+**/.idea
