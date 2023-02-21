@@ -22,6 +22,6 @@ notice"Rust is a trademark of the Mozilla Foundation in the US and other countri
   
 * [文盘Rust --  把程序作为守护进程启动](https://github.com/jiashiwen/wenpanrust/blob/main/articles/%E6%96%87%E7%9B%98Rust%20--%20%E6%8A%8A%E7%A8%8B%E5%BA%8F%E4%BD%9C%E4%B8%BA%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%90%AF%E5%8A%A8.md)
   
-* [文盘Rust -- rust 连接云上数仓 starwift]()
+* [文盘Rust -- rust 连接云上数仓 starwift](https://github.com/jiashiwen/wenpanrust/blob/main/articles/%E6%96%87%E7%9B%98Rust%20--%20rust%20%E8%BF%9E%E6%8E%A5%E4%BA%91%E4%B8%8A%E6%95%B0%E4%BB%93%20starwift.md)
   
-* [文盘Rust -- 本地库引发的依赖冲突]()
+* [文盘Rust -- 本地库引发的依赖冲突](https://github.com/jiashiwen/wenpanrust/blob/main/articles/%E6%96%87%E7%9B%98Rust%20--%20%E6%9C%AC%E5%9C%B0%E5%BA%93%E5%BC%95%E5%8F%91%E7%9A%84%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81.md)
