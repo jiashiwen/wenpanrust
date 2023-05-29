@@ -10,8 +10,8 @@
 - [x] struct 中的生命周期(多个trait object)
 - [x] 把程序作为守护进程启动
 - [x] r2d2 实现redis连接池
-- [ ] rust 连接云上数仓 starwift
-- [ ] rust 安全连接 TiDB/MySql 
+- [x] rust 连接云上数仓 starwift
+- [x] rust 安全连接 TiDB/MySql
 - [ ] 利用 signal-hook，实现优雅停机
 - [ ] 通过rayon实现任务控制
 - [ ] 错误处理套路:定义错误，抛出错误，输出错误
