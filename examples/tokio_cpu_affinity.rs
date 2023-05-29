@@ -20,7 +20,7 @@ pub fn main() {
             println!("num {}", i);
             task::spawn(async move {
                 // let res = core_affinity::set_for_current(core_id);
-                println!("{}", res);
+                // println!("{}", res);
                 loop {
                     let mut sum: i32 = 0;
                     for i in 0..100000000 {
