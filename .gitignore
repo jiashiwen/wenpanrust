@@ -46,3 +46,6 @@ Cargo.lock
 **/*.rs.bk
 **/pid
 **/.idea
+
+# ignore submodule
+wrapper_secp256k1/secp256k1_sys
