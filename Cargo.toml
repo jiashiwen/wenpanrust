@@ -17,6 +17,7 @@ core_affinity = "0.8.0"
 
 members = [
     "ffi_sample",
+    "wrapper_secp256k1"
 ]
 
 [[example]]
