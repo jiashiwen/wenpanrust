@@ -219,7 +219,7 @@ git 引入 submodule
 
 ```shell
 cd wrapper_secp256k1
-git submodule add https://github.com/bitcoin-core/secp256k1  wrapper_secp256k1/secp256k1_sys/secp256k1_sys
+git submodule add https://github.com/bitcoin-core/secp256k1  wrapper_secp256k1/secp256k1_sys 
 ```
 
 工程下新建bindings目录用来存放绑定文件，该目录与src平级
@@ -322,6 +322,7 @@ wrapper_secp256k1 工程的完整代码[位置](https://github.com/jiashiwen/wen
 * update submodule
   
   ```shell
+  git submodule init
   git submodule update
   ```
  
@@ -336,12 +337,13 @@ wrapper_secp256k1 工程的完整代码[位置](https://github.com/jiashiwen/wen
   ``` 
 
 * run test
-  ```
-  cargo test -p 
+  
+  ```shell
+  cargo test -p wrapper_secp256k1
   ```
 
 参考资料
 
 [Rust FFI (C vs Rust)学习杂记.pdf](https://github.com/yujinliang/my_writing/blob/master/Rust%20FFI%20(C%20vs%20Rust)%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%AE%B0.pdf)  
-[bindgen官方文档](https://rust-lang.github.io/rust-bindgen/introduction.html)
+[bindgen官方文档](https://rust-lang.github.io/rust-bindgen/introduction.html)   
 [Rust FFI 编程 - bindgen 使用示例](https://rustcc.cn/article?id=9219a366-84d3-49c8-b957-dfbade1257fc)
