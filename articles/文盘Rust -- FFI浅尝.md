@@ -183,8 +183,17 @@ fn main() {
 └── wrapper.h
 ```
 
-* 封装一个c编写的库
-从工程方面看看封装secp256k1如何操作
+ffi_sample 工程的完整代码[位置](https://github.com/jiashiwen/wenpanrust/tree/main/ffi_sample),读者可以clone https://github.com/jiashiwen/wenpanrust，直接运行
+
+```shell
+cargo run -p ffi_sample
+```
+
+即可
+
+## 场景三 封装一个c编写的库
+
+secp256k1是一个椭圆曲线计算的 clib，这玩意儿在密码学和隐私计算方面的常用算法，下面我们从工程方面看看封装secp256k1如何操作
 
 ```shell
 cargo new --lib wrapper_secp256k1
@@ -210,7 +219,7 @@ git 引入 submodule
 
 ```shell
 cd wrapper_secp256k1
-git submodule add https://github.com/bitcoin-core/secp256k1  secp256k1_sys
+git submodule add https://github.com/bitcoin-core/secp256k1  wrapper_secp256k1/secp256k1_sys/secp256k1_sys
 ```
 
 工程下新建bindings目录用来存放绑定文件，该目录与src平级
@@ -300,6 +309,36 @@ make install
 编译完成后，测试通过
 
 其实 secp256k1 有对应的 [rust wrapper](https://github.com/rust-bitcoin/rust-secp256k1),我们这里只是展示一下封装的过程。
+
+wrapper_secp256k1 工程的完整代码[位置](https://github.com/jiashiwen/wenpanrust/tree/main/wrapper_secp256k1),有兴趣的朋友可以clone https://github.com/jiashiwen/wenpanrust。通过一下操作查看运行结果：
+
+* clone 项目
+  
+  ```shell
+  git clone https://github.com/jiashiwen/wenpanrust
+  cd wenpanrust
+  ```
+
+* update submodule
+  
+  ```shell
+  git submodule update
+  ```
+ 
+* 编译 secp256k1
+  
+  ```shell
+  cd wrapper_secp256k1/secp256k1_sys 
+  ./autogen.sh
+  ./configure
+  make
+  make install  
+  ``` 
+
+* run test
+  ```
+  cargo test -p 
+  ```
 
 参考资料
 

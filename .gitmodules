@@ -1,3 +1,6 @@
 [submodule "wrapper_secp256k1/secp256k1_sys"]
 	path = wrapper_secp256k1/secp256k1_sys
 	url = https://github.com/bitcoin-core/secp256k1
+[submodule "wenpanrust/secp256k1_sys"]
+	path = wenpanrust/secp256k1_sys
+	url = https://github.com/bitcoin-core/secp256k1
