@@ -12,7 +12,8 @@
 - [x] r2d2 实现redis连接池
 - [x] rust 连接云上数仓 starwift
 - [x] rust 安全连接 TiDB/MySql
-- [ ] rust FFI浅尝
+- [x] rust FFI浅尝
+- [ ] elk 的 rust 平替 vector+openobserve
 - [ ] rust 条件编译
 - [ ] 利用 signal-hook，实现优雅停机
 - [ ] 通过rayon实现任务控制
@@ -26,4 +27,4 @@
 - 现有世界重构，波卡 Goven wood 先path验证 后rust生产
 - 成熟体系下沉
 - 解决内存安全问题
-- 解决性能问题  
+- 解决性能问题 
