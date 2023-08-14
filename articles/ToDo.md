@@ -13,6 +13,7 @@
 - [x] rust 连接云上数仓 starwift
 - [x] rust 安全连接 TiDB/MySql
 - [x] rust FFI浅尝
+- [ ] rust 玩转grpc tonic
 - [ ] elk 的 rust 平替 vector+openobserve
 - [ ] rust 条件编译
 - [ ] 利用 signal-hook，实现优雅停机
