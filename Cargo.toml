@@ -5,30 +5,37 @@ edition = "2021"
 
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+members = [
+    "ffi_sample",
+    "wrapper_secp256k1",
+    "parallel_write_file",
+    "tonic_sample",
+]
 
 [dependencies]
 anyhow = "1.0.45"
 lazy_static = "1.4.0"
 rust-embed = "6.4.0"
-tokio = { version = "^1", features = ["full"] }
+tokio.workspace = true
 core_affinity = "0.8.0"
 
-[workspace]
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
 
-members = [
-    "ffi_sample",
-    "wrapper_secp256k1",
-    "parallel_write_file"
-]
+[workspace.dependencies]
+tokio = { version = "^1", features = ["full"] }
+
 
 [[example]]
 name = "deadlock"
 path = "examples/static_deadlock.rs"
 
 [[example]]
-name="structlifetime"
-path="examples/lifetimeinstruct.rs"
+name = "structlifetime"
+path = "examples/lifetimeinstruct.rs"
 
 [[example]]
-name="tokio_cpu_affinity"
-path="examples/tokio_cpu_affinity.rs"
+name = "tokio_cpu_affinity"
+path = "examples/tokio_cpu_affinity.rs"

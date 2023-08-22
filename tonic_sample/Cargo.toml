@@ -1,0 +1,40 @@
+[package]
+name = "tonic_sample"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]] # Bin to run the HelloWorld gRPC server
+name = "helloworld-server"
+path = "src/server.rs"
+
+[[bin]] # Bin to run the HelloWorld gRPC client
+name = "helloworld-client"
+path = "src/client.rs"
+
+[[bin]] # Bin to run the HelloWorld gRPC server
+name = "stream-server"
+path = "src/stream_server.rs"
+
+[[bin]] # Bin to run the HelloWorld gRPC client
+name = "stream-client"
+path = "src/stream_client.rs"
+
+
+[dependencies]
+tokio.workspace = true
+tonic = "0.9"
+tonic-reflection = "0.9.2"
+prost = "0.11"
+tokio-stream = "0.1"
+async-stream = "0.2"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rand = "0.7"
+# h2 = { version = "0.3", optional = true }
+h2 = { version = "0.3" }
+anyhow = "1.0.75"
+futures-util = "0.3.28"
+
+[build-dependencies]
+tonic-build = "0.9"
