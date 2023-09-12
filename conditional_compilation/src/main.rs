@@ -26,10 +26,7 @@ fn print_feature() {
 
 // cargo run --features feature_2
 // #[cfg(all(target_os = "macos", feature = "feature_2"))]
-#[cfg_attr(
-    target_os = "linux",
-    cfg_attr(feature = "feature_2", some_other_attribute)
-)]
+#[cfg_attr(target_os = "linux", cfg_attr(feature = "feature_2",))]
 fn print_feature_macos() {
     println!("macos feature tow")
 }
