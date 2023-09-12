@@ -11,6 +11,8 @@ members = [
     "wrapper_secp256k1",
     "parallel_write_file",
     "tonic_sample",
+    "conditional_compilation",
+
 ]
 
 [dependencies]

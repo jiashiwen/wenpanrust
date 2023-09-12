@@ -10,5 +10,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .file_descriptor_set_path(out_dir.join("stream_descriptor.bin"))
         .compile(&["proto/echo.proto"], &["proto"])
         .unwrap();
+
     Ok(())
 }

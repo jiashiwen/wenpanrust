@@ -9,7 +9,14 @@ use anyhow::Result;
 
 use futures_util::FutureExt;
 use pb::{EchoRequest, EchoResponse};
-use std::{error::Error, io::ErrorKind, net::SocketAddr, pin::Pin, thread, time::Duration};
+use std::{
+    error::Error,
+    io::ErrorKind,
+    net::{SocketAddr, ToSocketAddrs},
+    pin::Pin,
+    thread,
+    time::Duration,
+};
 use tokio::{
     net::TcpListener,
     sync::{
@@ -237,7 +244,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // let server = EchoServer {};
     // Server::builder()
     //     .add_service(pb::echo_server::EchoServer::new(server))
-    //     .serve("[::1]:50051".to_socket_addrs().unwrap().next().unwrap())
+    //     .serve("0.0.0.0:50051".to_socket_addrs().unwrap().next().unwrap())
     //     .await
     //     .unwrap();
 
@@ -248,7 +255,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     //     .build()
     //     .unwrap();
 
-    // let addr = "[::1]:50051".parse().unwrap();
+    // let addr = "0.0.0.0:50051".parse().unwrap();
 
     // let server = EchoServer {};
 
@@ -258,7 +265,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     //     .serve(addr)
     //     .await?;
 
-    let addr = "[::1]:50051".parse().unwrap();
+    let addr = "0.0.0.0:50051".parse().unwrap();
 
     let server = StreamEchoServer {
         shutdown_tx: Mutex::new(None),
@@ -266,13 +273,18 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     };
 
     let rs = server.start(addr).await.unwrap();
-    task::spawn(async move {
-        loop {
-            println!("{:?}", server.serve_state);
-            thread::sleep(Duration::from_secs(10))
-        }
-    });
+    // task::spawn(async move {
+    //     loop {
+    //         println!("{:?}", server.serve_state);
+    //         thread::sleep(Duration::from_secs(10))
+    //     }
+    // });
 
+    task::spawn(async move {
+        thread::sleep(Duration::from_secs(10));
+        server.shutdown().await;
+        println!("stop!!!!");
+    });
     rs.await.unwrap();
 
     Ok(())
